@@ -157,7 +157,7 @@ const StringIterator = struct {
         }
     }
 
-    // Return true if the next character in the stream is `ch`.
+    // Return true if the character following the next character to be read in the stream is `ch`.
     pub fn peekNextIs(it: *const Self, ch: u8) bool {
         if (it.peekAhead(1)) |ok_ch| {
             return ok_ch == ch;
@@ -171,7 +171,7 @@ const StringIterator = struct {
         return it.peekAhead(0);
     }
 
-    // Return true if the next character in the stream is `ch`.
+    // Return true if the next character to be read in the stream is `ch`.
     pub fn peekIs(it: *const Self, ch: u8) bool {
         if (it.peek()) |ok_ch| {
             return ok_ch == ch;
